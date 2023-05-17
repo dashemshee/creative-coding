@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Concrete Manifesto</title> 
+    <!--
+        This is Emily Herrity's interpretation of 
+        "Decolonising Design: Editorial Statement" exercise:
+        https://canvas.umw.edu/courses/1446087/assignments/10969836
+
+    My manifesto statement is by Ahmed Ansari:
+    "sharper lens brought to bear on non-western ways of thinking"
+    https://designmanifestos.org/decolonising-design-editorial-statement/
+
+
+    -->  
+   
+    <style type="text/css">
+        div {    
+
+            position: absolute; 
+            top: 20px;   
+            left: 150px; 
+            rotate: -10deg;
+            font-family: cr; 
+            font-style: italic;   
+            font-size: 40px;
+            background-color: pink;
+            letter-spacing: -2px;  
+            
+ 
+            }
+        p{
+            font-family: 'bebas neue', sans-serif;
+
+
+            }
+                    }
+            #grow:hover {
+                 cursor: pointer;
+                    }
+
+    </style>
+</head>
+<body>
+
+    <div>    
+    <h1>Decolonising Design: Editorial Statement</h1>
+    <h2>sharper lens brought to bear on NON-WESTERN ways of thinking</h2>
+    <h3>"our aim should be nothing less than to seek the radical transfiguration of these structures through the critical eye of the programmatic imagination that dares to identify the possibilities and conditions that will give us alternatives to the now." "Our goal is ontological rather than additive change. It is not sufficient for design institutions to simply include a greater diversity of actors or perspectives." "It is with the aim of providing an outlet for voices from the fringes, the voices of the marginal and the suppressed in design discourse, that we have opened this platform." "We encourage and seek decentralized dialogues, in which different voices can coexist in their difference rather than in an assimilated narrative." </h3>
+    </div>
+    
+
+    <script type="text/javascript">
+let g = document.getElementById("grow");
+
+// set the font-size property in JavaScript
+g.style.fontSize = "100%";
+
+// add a function to the onclick event
+g.onclick = function(){
+
+     // determine current font size and convert it to an integer
+     let fs = Number(this.style.fontSize.replace("%",""));
+
+     // make sure it worked
+     console.log(fs);
+
+     // change the color of the clicked element 
+     this.style.color = "red";
+
+     // change the font size to increase it by 10%
+     this.style.fontSize = fs * 1.1 + "%";
+};
+</script>
+
+</body>
+</html> 
