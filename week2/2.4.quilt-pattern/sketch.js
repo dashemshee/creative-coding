@@ -6,6 +6,8 @@ function draw() {
   background(220);
   angleMode(DEGREES);
 
+//I choose this specific quilt design because it looked really unique the X cross shape pattern. It was very fun messing around with the different patterns and being creative. I found a few different quilt patterns that were a little bit similar to this for inspiration.
+
     //quilt colors
   const colors = ['pink', 'lightblue', 'black'];
   const letters = ['A', 'B', 'C'];
