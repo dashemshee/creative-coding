@@ -27,7 +27,6 @@ function draw() {
   const numRows = pattern.length;
   const numCols = pattern[0].length;
 
-  //size
   const blockWidth = width/numCols;
   const blockHeight = height/numRows;
 
