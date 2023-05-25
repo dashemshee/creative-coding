@@ -9,7 +9,7 @@ function draw() {
 //I choose this specific quilt design because it looked really unique the X cross shape pattern. It was very fun messing around with the different patterns and being creative. I found a few different quilt patterns that were a little bit similar to this for inspiration.
 
     //quilt colors
-  const colors = ['pink', 'lightblue', 'black'];
+  const colors = ['hotpink', 'lavender', 'black'];
   const letters = ['A', 'B', 'C'];
 
 
@@ -25,7 +25,7 @@ function draw() {
        ];
 
   const numRows = pattern.length;
-  const numCols = pattern[0].length;
+  const numCols = pattern.length;
 
   const blockWidth = width/numCols;
   const blockHeight = height/numRows;
