@@ -4,7 +4,7 @@ let sampleY = 20;
 
 
 function preload() {
-  img = loadImage('https://dashemshee.github.io/creative-coding/week2/pixels/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg');
+  img = loadImage('https://dashemshee.github.io/creative-coding/week2/pixels/Reflections-3.jpg');
 
 }
 
