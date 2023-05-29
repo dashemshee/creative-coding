@@ -32,7 +32,7 @@ for (let y = 0; y <= img.height; y += sampleY ){
       let imgY = map(y, 0, img.height, 0, img.height);
       let imgColor = img.get(imgX, imgY);
       fill(imgColor);
-      rect(x, y, sampleX, sampleY);
+      ellipse(x, y, sampleX, sampleY);
 
 }
 }
