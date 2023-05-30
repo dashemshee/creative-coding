@@ -39,6 +39,7 @@ for (let i = 0; i < numObjects; i++)   {
     fill(colors[i]);
     circle(x[i], y[i], 50); }
 } 
+//pretty please work
 
 
 
