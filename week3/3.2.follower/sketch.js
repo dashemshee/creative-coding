@@ -13,10 +13,9 @@ let img;
 
 function preload() {
 
-img = loadImage("")
-
-
+img = loadImage("https://raw.githubusercontent.com/dashemshee/creative-coding/main/week3/3.2.follower/s-l1600.jpg");
 }
+
 function setup() {
   createCanvas(800, 800);
 
