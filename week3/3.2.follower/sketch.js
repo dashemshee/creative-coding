@@ -13,6 +13,8 @@ let img;
 
 function preload() {
 
+  backgroundImage = loadImage("")
+
 img = loadImage("https://dashemshee.github.io/creative-coding/week3/3.2.follower/01.jpg");
 }
 
@@ -29,6 +31,8 @@ function setup() {
 function draw() {
   background(220);
 
+
+
   rect(goalx, goaly, goalSize, goalSize);
 
   // distance formula
@@ -38,8 +42,7 @@ function draw() {
   x += speedx;
   y += speedy;
 
-  // circle for follower
-  circle(x, y, 50);
+   image(img, x - 50, y - 50, 100, 100);
 
   if (mouseX > x) {
     // move to right
