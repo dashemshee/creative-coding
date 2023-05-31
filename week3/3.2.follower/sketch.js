@@ -8,18 +8,18 @@ let speedx = speedfactor;
 let speedy = speedfactor;
 let goalx = 0;
 let goaly = 0;
-let goalSize = 30;
+let goalSize = 50;
 let img;
 
 function preload() {
 
-  backgroundImage = loadImage("")
+  backgroundImage = loadImage("https://dashemshee.github.io/creative-coding/week3/3.2.follower/bikini-bottom-spongebob-squarepants-jorge-terrones.jpg");
 
 img = loadImage("https://dashemshee.github.io/creative-coding/week3/3.2.follower/01.jpg");
 }
 
 function setup() {
-  createCanvas(800, 800);
+  createCanvas(700, 700);
 
   x = random(width);
   y = random(height);
@@ -31,7 +31,7 @@ function setup() {
 function draw() {
   background(220);
 
-
+image(backgroundImage, 0, 0, width, height);
 
   rect(goalx, goaly, goalSize, goalSize);
 
