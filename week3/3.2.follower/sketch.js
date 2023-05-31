@@ -13,7 +13,7 @@ let img;
 
 function preload() {
 
-img = loadImage("https://raw.githubusercontent.com/dashemshee/creative-coding/main/week3/3.2.follower/s-l1600.jpg");
+img = loadImage("https://dashemshee.github.io/creative-coding/week3/3.2.follower/01.jpg");
 }
 
 function setup() {
