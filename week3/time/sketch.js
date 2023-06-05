@@ -27,6 +27,7 @@ function draw() {
 
   textSize(32);
   textAlign(CENTER, CENTER);
+  textFont('cursive');
   fill(0);
   text(countdownText, width / 2, 50);
 
@@ -36,7 +37,7 @@ function updateCountdown() {
   countdown--;
 
   if (countdown === 0) {
-    countdown = 5;
+  countdown = 5;
     currentImage = (currentImage + 1) % images.length;
 }
 }
