@@ -20,7 +20,7 @@ function setup() {
 }
 
 function draw() {
-  background(backgroundImage); 
+  background(backgroundImage, 0, 0, width, height); 
 
   poem = grammar.flatten("#origin#");
     textFont("bold");
