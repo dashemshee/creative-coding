@@ -15,7 +15,7 @@ function preload() {
 
 function setup() {
   createCanvas(800, 800);
-  frameRate(.3);
+  frameRate(.2);
   textAlign(CENTER, CENTER);
 }
 
