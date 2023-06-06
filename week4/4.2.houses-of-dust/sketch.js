@@ -10,11 +10,11 @@ let grammar = tracery.createGrammar({
   "inhabitants": ["PEOPLE", "ANIMALS", "PLANTS", "SPIRITS", "ROBOTS", "GHOSTS"] });
 
 function preload() {
-  backgroundImage = loadImage('https://dashemshee.github.io/creative-coding/week4/4.2.houses-of-dust/dustyhouse.jpg');
+  backgroundImage = loadImage('https://dashemshee.github.io/creative-coding/week4/4.2.houses-of-dust/dustyimage2.jpg');
   }
 
 function setup() {
-  createCanvas(800, 800);
+  createCanvas(800, 600);
   frameRate(.2);
   textAlign(CENTER, CENTER);
 }
