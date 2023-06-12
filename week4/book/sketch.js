@@ -1,64 +1,62 @@
+let word = "periwinkle";
+let wc = 2;
+
 function setup() {
 
-//words from tracery
-const grammar = tracery.createGrammar({
-        "move": ["Bow", "Sprint", "Whisp", "moved", "stung", "ran"],
-        "bird": ["mockingjay", "jabberjay", "mockingbird", "jay", "crow", "bird"],
-        "agent": ["mentor", "mentee", "#bird#", "sponsor", "trainer"],
-        "transVerb": ["forget", "plant", "fight", "remember", "action", "revenge", "love"],
-        "emotion": ["sorrow", "love", "pain", "home", "death", "forgiveness", "grace"],
-        "substance": ["#emotion#", "mist", "fog", "technology", "silver", "rain", "creek", "forest", "virtue", "sun", "shadow", "gold", "meadow", "darkness"],
-        "adj": ["fair", "bright", "gripe", "divine", "inseparable", "fine", "lazy", "grand", "finale", "quick", "poise", "grave", "clear", "faint", "dreary"],
-        "doThing": ["nightmare", "move", "cry", "weep", "laugh", "dream"],
-        "verb": ["luck", "grace", "bless", "dapple", "touch", "talent", "moving", "crown", "veil"],
-        "ground": ["grass", "river", "creek", "sea", "meadow", "forest", "glade", "field", "sky", "waves"],
-        "poeticAdj": ["#substance#-#verb.ed#"],
-        "poeticDesc": ["#poeticAdj#", "by #substance# #verb#'d", "#adj# with #substance#", "#verb.ed# with #substance#"],
-        "ah": ["ah", "alas", "oh", "yet", "but", "and"],
-        "on": ["on", "in", "above", "beneath", "under", "by"],
-        "punctuation": [",", ":", " ", "!", ".", "?"],
-        "noun": ["#ground#", "#agent#"],
-        "line": [
-            "My #noun#, #poeticDesc#, my #adj# one",
-            "More #adj# than #noun# #poeticDesc#",
-            "#move.capitalize# with me #on# #poeticAdj# #ground#",
-            "The #agent.s# #move#, #adj# and #adj#",
-            "#poeticDesc.capitalize#, #poeticDesc#, #ah#, #poeticDesc#",
-            "How #adj# is the #poeticDesc# #sub#",
-            "#poeticDesc.capitalize# with #emotion#, #transVerb.s# the #noun#"
-        ],
-        "poem": ["#line##punctuation#\n#line##punctuation#\n#line##punctuation#\n#line#."],
-        "origin": ["#[sub:#noun#]poem#"]
+let content = createElement("div");
+  content.attribute("id","content");
+  
+  content.child(createElement("h1","Many " + word + "s"));
+  
+  
+  
+  while( wc < 50000){
+      let wordSize = random(20, 40);
+      let wordElement = createElement("h2", String(word + " ").repeat(random(2, 8)).toUpperCase());
+    wordElement.style("font-size", wordSize + "px");
+    content.child(wordElement);
+    
+for (let p = 0; p < random(5,20); p++){
+      let paragraph = '';
+for (let s = 0; s < random(3,20); s++){
+      let internalPunct = [",",",",",",";"," --"];
+      let endPunct = [".","."," ","!"];
+      let sentence = word.charAt(0).toUpperCase() + word.slice(1);
+      let sentenceLength = random(9,25);
+        wc += sentenceLength + 1;
+for (let w = 0; w < sentenceLength; w++){
+          sentence += " " + word;
+          if (random() < 0.2){
+            sentence += random(internalPunct);
+  }
+  }
+  sentence += random(endPunct) + " ";
+  paragraph += sentence;
+      }
+  content.child(createElement("p", paragraph).style("color", "purple"));
+    }
+    }
+  
+Bindery.makeBook({
+    content: '#content',
+    rules: [
+
+Bindery.PageBreak({
+    selector: "h1",
+    position: "after"
+      }),
+
+Bindery.PageBreak({
+    selector: 'h2',
+    position: 'before',
+    continue: 'right'
+    })
+]
 });
 
-const bookContent = grammar.flatten('#origin#');
 
-const book = new Bindery.Book({
-        content: bookContent,
-        pageSize: '4',
-        pageMargins: '1',
-        hyphenation: true,
-        printBackground: true,
-        title: 'Words of The hunger games',
-        author: 'Emily Herrity, OG -Suzanne Collins',
-        fontSize: '12pt',
-        font: 'Times New Roman',
-        rules: [
-
-
-            new Bindery.FullBleedPageRule(),
-            new Bindery.PageBreakRule({
-                selectors: ['by chapter?'],
-})
-        ]
-});
-
-    book.renderTo('main').then(() => {
-        console.log('Book rendering complete');
-});
+select("body").style("background-color", "purple");
 }
 
-  const script = document.createElement('script');
-script.src = 'https://unpkg.com/rita@2.8.31/dist/rita.js';
-script.onload = setup;
-document.head.appendChild(script);
+
+setup();
