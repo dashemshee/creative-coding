@@ -1,7 +1,13 @@
 let circles = [];
-const numColumns = 40;
-const numRows = 40;
+const numColumns = 50;
+const numRows = 50;
 const circleSpacing = 40;
+
+let backgroundImage;
+
+function preload() {
+  backgroundImage = loadImage('https://dashemshee.github.io/creative-coding/week5/final/skyline.jpg')
+}
 
 
 function setup() {
@@ -11,6 +17,8 @@ function setup() {
 
 function draw() {
   background(220);
+
+  image(backgroundImage, 0, 0, width, height);
   updateCircles();
   displayCircles();
 }
@@ -37,7 +45,7 @@ for (let circleObj of circles) {
 
 function displayCircles() {
   for (let circleObj of circles) {
-    fill('blue');
+    fill('red');
     circle(circleObj.x, circleObj.y, circleObj.radius);
   }
 }
