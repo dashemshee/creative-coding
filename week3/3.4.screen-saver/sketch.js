@@ -3,7 +3,7 @@ let earthX = 0;
 
 function setup() {
   createCanvas(500, 160);
-  earthAni = loadAnimation('', '');
+  earthAni = loadAnimation('https://dashemshee.github.io/creative-coding/week3/3.4.screen-saver/earth3.jpg');
 }
 
 function draw() {
