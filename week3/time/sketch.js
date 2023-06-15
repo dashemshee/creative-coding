@@ -23,9 +23,13 @@ function draw() {
 
   image(images[currentImage], 0, 0, width, height);
 
-  let countdownText = "Orogeny shift countdown: " + countdown;
+let countdownText = "Orogeny shift countdown: " + countdown;
 
   textSize(32);
+
+  text("hour: " + hour(), 50, 50);
+  text("minute: " + minute(), 50, 75);
+  text("second: " + second(), 50, 100);
   textAlign(CENTER, CENTER);
   textFont('cursive');
   fill(0);
