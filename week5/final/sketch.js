@@ -1,23 +1,31 @@
 let backgroundImages = [];
 let currentBackgroundIndex = 0;
-let interval = 300;
+let interval = 200;
 let backgroundImage;
 let drops = [];
 
 let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
 function preload() {
-  backgroundImages.push(loadImage('https://dashemshee.github.io/creative-coding/week5/final/image1.1.jpg'));
-  backgroundImages.push(loadImage('https://dashemshee.github.io/creative-coding/week5/final/image2.2.jpg'));
-  backgroundImages.push(loadImage('https://dashemshee.github.io/creative-coding/week5/final/image3.3.jpg'));
+  backgroundImages.push(loadImage('https://dashemshee.github.io/creative-coding/week5/final/1.PNG'));
+  backgroundImages.push(loadImage('https://dashemshee.github.io/creative-coding/week5/final/2.PNG'));
+  backgroundImages.push(loadImage('https://dashemshee.github.io/creative-coding/week5/final/3.PNG'));
+  backgroundImages.push(loadImage('https://dashemshee.github.io/creative-coding/week5/final/4.PNG'));
+  backgroundImages.push(loadImage('https://dashemshee.github.io/creative-coding/week5/final/5.PNG'));
+  backgroundImages.push(loadImage('https://dashemshee.github.io/creative-coding/week5/final/6.PNG'));
+  backgroundImages.push(loadImage('https://dashemshee.github.io/creative-coding/week5/final/7.PNG'));
+  backgroundImages.push(loadImage('https://dashemshee.github.io/creative-coding/week5/final/8.PNG'));
+  backgroundImages.push(loadImage('https://dashemshee.github.io/creative-coding/week5/final/9.PNG'));
 }
 
 function setup() {
-  createCanvas(600, 600);
+  createCanvas(1000, 600);
   setBackgroundImage(currentBackgroundIndex);
   setInterval(changeBackground, interval);
 
-  for (let i = 0; i < 100; i++) {
+  const numberOfDrops = 400;
+
+  for (let i = 0; i < numberOfDrops; i++) {
     drops.push(new Drop());
   }
 }
@@ -32,25 +40,6 @@ function draw() {
     drops[i].fall();
     drops[i].show();
   }
-
-  let now = new Date();
-  let currentTimestamp = Date.now();
-  let currentSecond = second();
-  let currentMinute = minute();
-  let currentHour = hour();
-  let currentDay = day();
-  let currentMonth = month();
-  let currentYear = year();
-  let currentDayOfWeek = days[now.getDay()];
-
-  text("Timestamp: " + currentTimestamp, 50, 50);
-  text("Second: " + currentSecond, 50, 65);
-  text("Minute: " + currentMinute, 50, 80);
-  text("Hour: " + currentHour, 50, 95);
-  text("Day: " + currentDay, 50, 110);
-  text("Month: " + currentMonth, 50, 125);
-  text("Year: " + currentYear, 50, 140);
-  text("Day of the Week: " + currentDayOfWeek, 50, 155);
 }
 
 function setBackgroundImage(index) {
@@ -61,7 +50,7 @@ function changeBackground() {
   currentBackgroundIndex = (currentBackgroundIndex + 1) % backgroundImages.length;
   setBackgroundImage(currentBackgroundIndex);
 }
- //"the coding train"//
+
 class Drop {
   constructor() {
     this.x = random(width);
@@ -77,7 +66,8 @@ class Drop {
   }
 
   show() {
-    stroke(138, 43, 226);
+    stroke('red');
+    fill('red');
     line(this.x, this.y, this.x, this.y + 10);
   }
 }
