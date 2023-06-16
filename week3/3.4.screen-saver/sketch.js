@@ -1,12 +1,18 @@
 let backgroundImages = [];
 let currentBackgroundIndex = 0;
-let interval = 3000;
+
+//image will change every 
+let interval = 6000;
 let backgroundImage;
 
+//adding ripple effect tomorrow//
+
+
+//images came from google (earthcam) website//
 function preload() {
+  backgroundImages.push(loadImage('https://dashemshee.github.io/creative-coding/week3/3.4.screen-saver/geo1.jpg'));
+  backgroundImages.push(loadImage('https://dashemshee.github.io/creative-coding/week3/3.4.screen-saver/geo3.jpg'));
   backgroundImages.push(loadImage('https://dashemshee.github.io/creative-coding/week3/3.4.screen-saver/earth3.jpg'));
-  backgroundImages.push(loadImage('https://dashemshee.github.io/creative-coding/week3/3.4.screen-saver/earth4.jpg'));
-  backgroundImages.push(loadImage('https://dashemshee.github.io/creative-coding/week3/3.4.screen-saver/earth5.jpg'));
 }
 
 function setup() {
@@ -18,6 +24,12 @@ function setup() {
 function draw() {
   background(0);
   image(backgroundImage, 0, 0, width, height);
+
+  let now = new Date();
+  textSize(80);
+  fill('white');
+  textAlign(CENTER, CENTER);
+  text(formatTime(now), width / 2, height / 2);
 }
 
 function setBackgroundImage(index) {
@@ -27,4 +39,15 @@ function setBackgroundImage(index) {
 function changeBackground() {
   currentBackgroundIndex = (currentBackgroundIndex + 1) % backgroundImages.length;
   setBackgroundImage(currentBackgroundIndex);
+}
+
+function formatTime(date) {
+  let hours = formatDigits(date.getHours());
+  let minutes = formatDigits(date.getMinutes());
+  let seconds = formatDigits(date.getSeconds());
+  return hours + ":" + minutes + ":" + seconds;
+}
+
+function formatDigits(value) {
+  return value < 10 ? "0" + value : value;
 }
