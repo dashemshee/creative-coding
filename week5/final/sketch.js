@@ -58,7 +58,7 @@ function changeBackground() {
   setBackgroundImage(currentBackgroundIndex);
 }
 
-
+//pointer from Maks K
 class Drop {
   constructor() {
     this.x = random(width);
