@@ -17,6 +17,8 @@ function preload() {
   backgroundImages.push(loadImage('https://dashemshee.github.io/creative-coding/week5/final/8.PNG'));
   backgroundImages.push(loadImage('https://dashemshee.github.io/creative-coding/week5/final/9.PNG'));
 
+
+//see if image works when uploaded to github
   raindropImage = loadImage('https://dashemshee.github.io/creative-coding/week5/final/twins.jpg');
 }
 
@@ -26,6 +28,7 @@ function setup() {
   setInterval(changeBackground, interval);
 
   const numberOfDrops = 50;
+
 
   for (let i = 0; i < numberOfDrops; i++) {
     drops.push(new Drop());
