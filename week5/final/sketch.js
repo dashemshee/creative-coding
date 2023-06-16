@@ -18,6 +18,8 @@ function preload() {
   backgroundImages.push(loadImage('https://dashemshee.github.io/creative-coding/week5/final/9.PNG'));
 }
 
+
+
 function setup() {
   createCanvas(1000, 600);
   setBackgroundImage(currentBackgroundIndex);
@@ -34,28 +36,39 @@ function draw() {
   background(0);
   image(backgroundImage, 0, 0, width, height);
 
-  //Coding Challenge #4: Purple Rain in Processing by "the coding train"//
+
+ //Coding Challenge #4: Purple Rain in Processing by "the coding train"- snippet of code helped me 
+  //form the rain drops// 
 
   for (let i = 0; i < drops.length; i++) {
     drops[i].fall();
     drops[i].show();
   }
-}
+
+
+  let now = new Date();
+  textSize(30);
+  fill('white');
+  textAlign(CENTER, CENTER);
+  text("Today is " + days[now.getDay()] + ", " + formatTime(now), width / 2, height - 50);
+  }
 
 function setBackgroundImage(index) {
   backgroundImage = backgroundImages[index];
-}
+  } 
 
 function changeBackground() {
   currentBackgroundIndex = (currentBackgroundIndex + 1) % backgroundImages.length;
   setBackgroundImage(currentBackgroundIndex);
 }
 
+
 class Drop {
-  constructor() {
+constructor() {
     this.x = random(width);
     this.y = random(-500, -50);
     this.yspeed = random(4, 10);
+    this.dropImage = loadImage('path_to_your_image.jpg'); 
   }
 
   fall() {
@@ -63,11 +76,21 @@ class Drop {
     if (this.y > height) {
       this.y = random(-200, -100);
     }
-  }
+    }
 
   show() {
-    stroke('red');
-    fill('red');
-    line(this.x, this.y, this.x, this.y + 10);
+    image(this.dropImage, this.x, this.y, 40, 40);
+
   }
+}
+
+function formatTime(date) {
+  let hours = formatDigits(date.getHours());
+  let minutes = formatDigits(date.getMinutes());
+  let seconds = formatDigits(date.getSeconds());
+  return hours + ":" + minutes + ":" + seconds;
+}
+
+function formatDigits(value) {
+  return value < 10 ? "0" + value : value;
 }
